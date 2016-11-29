@@ -76,6 +76,6 @@ public class DatabaseTest {
 
         writeSignal.await(10, TimeUnit.SECONDS);
 
-        reference.child(name).push().setValue(exampleChat);
+        reference.child("events").push().setValue(exampleChat);
     }
 }
