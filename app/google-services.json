@@ -1,58 +1,35 @@
 {
   "project_info": {
-    "project_number": "134615853884",
-    "firebase_url": "https://calenther-f28a1.firebaseio.com",
-    "project_id": "calenther-f28a1",
-    "storage_bucket": "calenther-f28a1.appspot.com"
+    "project_number": "333573239294",
+    "firebase_url": "https://calenther-eab83.firebaseio.com",
+    "project_id": "calenther-eab83",
+    "storage_bucket": "calenther-eab83.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:134615853884:android:38ba5a00249d7cfd",
-        "android_client_info": {
-          "package_name": "junghhwang.calenther"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "134615853884-ndmbaqm6ens962i4r4f97ievbj9cego9.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDMaJq2tvItHgs02Sd0ZLM87gaC2wmFdAU"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:134615853884:android:a0ddc4fdac3ac7ce",
+        "mobilesdk_app_id": "1:333573239294:android:a0ddc4fdac3ac7ce",
         "android_client_info": {
           "package_name": "com.junghhwang.calenther"
         }
       },
       "oauth_client": [
         {
-          "client_id": "134615853884-ndmbaqm6ens962i4r4f97ievbj9cego9.apps.googleusercontent.com",
+          "client_id": "333573239294-4a0q3v9kb5856ln1ht9g3aif7kq41okq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.junghhwang.calenther",
+            "certificate_hash": "23BA9B8D9885F23B4E038DBB740305F012DF78D8"
+          }
+        },
+        {
+          "client_id": "333573239294-l69v0co6o9i1c6r95b7cbrm2354ppjao.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDMaJq2tvItHgs02Sd0ZLM87gaC2wmFdAU"
+          "current_key": "AIzaSyCuwIrpM74DHDP8QJ3y8weRthSYsDzYDAI"
         }
       ],
       "services": {
@@ -60,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "333573239294-l69v0co6o9i1c6r95b7cbrm2354ppjao.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

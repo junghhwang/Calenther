@@ -1,41 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:text="Button"
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/sign_out" />
-</LinearLayout>
-    <!--<?xml version="1.0" encoding="utf-8"?>-->
-    <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--xmlns:tools="http://schemas.android.com/tools"-->
-    <!--android:id="@+id/activity_main"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:paddingBottom="@dimen/activity_vertical_margin"-->
-    <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
-    <!--android:paddingRight="@dimen/activity_horizontal_margin"-->
-    <!--android:paddingTop="@dimen/activity_vertical_margin"-->
-    <!--tools:context="com.junghhwang.calenther.MainActivity">-->
+        app:srcCompat="@drawable/icon"
+        android:id="@+id/imageView3"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
 
-    <!--<Button-->
-    <!--android:text="Sign in"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:id="@+id/button_sign_in"-->
-    <!--android:layout_alignParentBottom="true"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:layout_marginBottom="127dp" />-->
+    <Button
+        android:text="Continue with current account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/button_continue"
+        android:layout_alignBottom="@+id/button_sign_out"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="56dp" />
 
-    <!--<Button-->
-    <!--android:text="Register"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_alignTop="@+id/button_sign_in"-->
-    <!--android:layout_alignStart="@+id/button_sign_in"-->
-    <!--android:layout_marginTop="52dp"-->
-    <!--android:id="@+id/button_register" />-->
-    <!--</RelativeLayout>-->
+    <Button
+        android:text="Sign in with different account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/button_sign_out"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/button_continue"
+        android:layout_marginBottom="50dp"
+        android:layout_alignEnd="@+id/button_continue" />
+</RelativeLayout>

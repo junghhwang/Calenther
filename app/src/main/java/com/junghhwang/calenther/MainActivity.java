@@ -23,9 +23,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -39,6 +43,8 @@ public class MainActivity extends AppCompatActivity  {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+    private String uid;
+    private String email;
 
 
     @Override
@@ -58,9 +64,13 @@ public class MainActivity extends AppCompatActivity  {
                 if (user != null) {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
-                    String uid = mAuth.getCurrentUser().getUid();
-                    String email = mAuth.getCurrentUser().getEmail();
-                    ref.child("Users").child(uid).setValue(new User(uid, email, uid.substring(uid.length()-5)));
+                    uid = mAuth.getCurrentUser().getUid();
+                    email =  mAuth.getCurrentUser().getEmail();
+                    String defaultName = uid.substring(uid.length()-5);
+                    ref.child("Users").child(uid).setValue(new User(uid, email, defaultName, new ArrayList<String>()));
+                    Map<String, Object> usernameToUID = new HashMap<>();
+                    usernameToUID.put(defaultName, uid);
+                    ref.child("UIDMap").updateChildren(usernameToUID);
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
@@ -73,17 +83,14 @@ public class MainActivity extends AppCompatActivity  {
         getGoogleAPIClient(gso);
         mGoogleApiClient.connect();
 
-        //this is a test case
-        ref.child("UIDMaps").child("UsernameToUID").push().setValue(new HashMap<String, String>()
-                .put("testKey", "testVal"));
-
         continueButton = (Button) findViewById(R.id.button_continue);
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                getGoogleAPIClient(gso);
+                Auth.GoogleSignInApi.silentSignIn(mGoogleApiClient);
                 Intent intent = new Intent(view.getContext(), Main2Activity.class)
-                        .putExtra("userUID", mAuth.getCurrentUser().getUid());
+                        .putExtra("userUID", uid);
                 startActivity(intent);
             }
         });
@@ -93,7 +100,6 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 mAuth.signOut();
-
 
                 // Google sign out
                 Auth.GoogleSignInApi.signOut(mGoogleApiClient);

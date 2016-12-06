@@ -24,15 +24,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".NewEventActivity" />
         <activity
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".CalendarActivity"
-            android:label="@string/title_activity_calendar"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".NewEventActivity"></activity>
+        <activity android:name=".NewEvent2Activity" />
+        <activity android:name=".NewEvent3Activity" />
+        <activity android:name=".EventChatActivity"></activity>
     </application>
 
 </manifest>

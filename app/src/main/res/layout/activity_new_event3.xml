@@ -1,42 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_new_event"
+    android:id="@+id/activity_new_event3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.junghhwang.calenther.NewEventActivity">
+    tools:context="com.junghhwang.calenther.NewEvent3Activity">
 
-    <EditText
-        android:layout_width="match_parent"
+    <TextView
+        android:text="Start time:"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/editText_search"
-        android:hint="Enter username"></EditText>
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:id="@+id/textView_start"
+        android:textSize="18sp" />
+
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:id="@+id/timePicker_start"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
 
     <Button
-        android:text="add"
+        android:text="Done!"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/editText_search"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/button_add_user" />
-
-    <include layout="@layout/content_new_event"
-        android:id="@+id/include" />
-
-    <Button
-        android:text="Next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editText_search"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="384dp"
-        android:id="@+id/button_to_2" />
-
-
+        android:id="@+id/button_done"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
